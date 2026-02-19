@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abarth Club Yorkshire Events</title>
+
+<meta property="og:title" content="Abarth Club Yorkshire Events Calendar" />
+<meta property="og:description" content="View all Abarth Club Yorkshire meets, shows and drive‑outs. Click any date to open full event details." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://monksmagic68.github.io/abarth-events/" />
+<meta property="og:image" content="https://monksmagic68.github.io/abarth-events/banner.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<style>
+body {font-family:Arial, sans-serif;margin:0;background:#0f0f0f;color:white}
+header {background:#000;padding:20px;text-align:center}
+h1 {margin:10px 0;color:#ff2b2b}
+.month {padding:15px}
+h2 {color:#ff2b2b}
+.calendar {display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.day-header {background:#ff2b2b;color:white;padding:10px;border-radius:8px;font-size:12px}
+.day {background:#1b1b1b;padding:10px;border-radius:8px;position:relative;min-height:80px;display:flex;flex-direction:column;align-items:flex-start}
+.day a {color:#ff2b2b;text-decoration:none;font-weight:bold;font-size:10px}
+.club {outline:2px solid #ff2b2b}
+.external {outline:2px solid #ff2b2b}
+.saturday {background:#141414}
+.event-name {font-size:10px;margin-top:2px;color:#fff}
+.event-time, .event-location, .event-notes {font-size:9px;margin-top:1px;color:#ccc}
+@media (min-width:700px){.calendar{max-width:900px;margin:auto}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Abarth Club Yorkshire Events</h1>
+</header>
+
+<div id="events"></div>
+
+<script>
+
+// Opens Facebook links in the Facebook app on mobile when possible (reduces login prompts).
+function openEventLink(url){
+    if(!url) return;
+    const isFacebook = /(^|\.)facebook\.com|fb\.me|l\.facebook\.com/i.test(url);
+    if(!isFacebook){
+        window.open(url, '_blank', 'noopener,noreferrer');
+        return;
+    }
+
+    const ua = navigator.userAgent || '';
+    const isIOS = /iPhone|iPad|iPod/i.test(ua);
+    const isAndroid = /Android/i.test(ua);
+
+    // Try to open in Facebook app first (uses existing FB login), then fall back to web.
+    if(isIOS){
+        // iOS deep link wrapper
+        const href = encodeURIComponent(url);
+        window.location.href = `fb://facewebmodal/f?href=${href}`;
+        setTimeout(()=>window.open(url, '_blank', 'noopener,noreferrer'), 700);
+        return;
+    }
+
+    if(isAndroid){
+        const clean = url.replace(/^https?:\/\//i, '');
+        // Android intent to Facebook app
+        window.location.href = `intent://${clean}#Intent;scheme=https;package=com.facebook.katana;end`;
+        setTimeout(()=>window.open(url, '_blank', 'noopener,noreferrer'), 700);
+        return;
+    }
+
+    // Desktop fallback
+    window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+const eventsList = {
+    "2026-02-21": {url:"https://fb.me/e/eh72gMTCD", name:"Italian Day @ The Motorist", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Italian cars showcase"},
+    "2026-03-14": {url:"https://themotorist.com", name:"Little Ladies 14th Birthday", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Family-friendly event"},
+    "2026-03-22": {url:"https://NY500.co.uk", name:"NY500 Scenic Drive Out", type:"club", time:"09:00", location:"Yorkshire Dales", notes:"Bring your Abarth"},
+    "2026-04-05": {url:"https://fb.me/e/5ZeA8UhA5", name:"Car society Easter car show Retford", type:"external", time:"10:00-17:00", location:"Retford Park", notes:"Open to all car enthusiasts"},
+    "2026-04-18": {url:"https://fb.me/e/74AVfbikB", name:"2nd annual Northern Abarth Day", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Celebration of Abarth cars"},
+    "2026-04-19": {url:"https://fb.me/e/3O6qlyY0f", name:"Auto amor @ the Great British car journey", type:"external", time:"10:00-16:00", location:"Ambergate Belper", notes:"Great British Car Shows Presents: Italian Cars"},
+    "2026-05-02": {url:"https://fb.me/e/7FGVtYnKS", name:"Auto Italia Brooklands", type:"external", time:"08:00-17:00", location:"Brooklands Museum, Weybridge", notes:"Now in its 32nd year, the Auto Italia Italian Car Day at Brooklands"},
+    "2026-05-04": {url:"https://fb.me/e/9FknRlo2U", name:"Mini V Abarth @ The Motorist with Killallchrome", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Mini v Abarth with Killallchrome"},
+    "2026-05-09": {url:"https://fb.me/e/4aRy5k0XU", name:"Croft circuit classic & modern car show", type:"external", time:"10:00-16:00", location:"Croft Circuit, Darlington", notes:"Croft Circuit hosts The Classic to Modern Motor Show"},
+    "2026-05-10": {url:"https://fb.me/e/9HwnHrUKV", name:"Tractor pulling, social event", type:"external", time:"10:00-18:00", location:"Scorton Show Ground", notes:"Join us for an exciting social event of power & high-octane action"},
+    "2026-05-17": {url:"https://www.facebook.com/search/top?q=classic%20wheels%20oakham", name:"Classic Wheels, Oakham", type:"external", time:"09:00-16:00", location:"Rutland Showground", notes:"More than 1000 classic vehicles were on display in 2025 alongside Autojumble stands"},
+    "2026-05-24": {url:"https://sandringhammotoringpageant.co.uk", name:"The Sandringham Pageant Of Motoring", type:"external", time:"10:00-17:00", location:"Sandringham Parkland", notes:"Live Music & Classic Cars"},
+    "2026-05-25": {url:"https://fb.me/e/4d1BgZXuk", name:"Yorkshire Classic & Performance Motor Show", type:"external", time:"10:00-18:00", location:"Scampston Hall, Malton", notes:"Classic & Performance social event"},
+    "2026-05-31": {url:"https://fb.me/e/4b8ss4FLo", name:"JPC Smiles For Miles", type:"external", time:"09:00-17:00", location:"Hardwick Hall, Stockton", notes:"Action-packed day of inclusive automotive excitement"},
+    "2026-06-06": {url:"https://fb.me/e/6u0tk6p7N", name:"Car Society & Retford Car Show", type:"external", time:"11:00-16:00", location:"Retford Rugby Club", notes:"A car show for all."},
+    "2026-06-07": {url:"https://fb.me/e/1Up4JhOS1E", name:"Nottingham Motor Show @ Wollaton Hall", type:"external", time:"09:00-16:00", location:"Wollaton Hall, Nottingham", notes:"The Nottingham Motor Show, set in the beautiful grounds of Wollaton Hall"},
+    "2026-06-14": {url:"https://greatbritishmotorshows.com", name:"The Lake District Classic & Performance Motor Show", type:"external", time:"09:00-16:00", location:"Hutton in the Forest, near Penrith", notes:"Classic car enthusiasts, performance cars, clubs & collectors"},
+    "2026-06-28": {url:"https://fb.me/e/1UdqgahXu3", name:"JPC Smiles For Miles @ The Motorist", type:"external", time:"09:00-17:00", location:"The Motorist, Leeds", notes:"Featuring an impressive range of Prestige, Sports, and Supercars on display"},
+    "2026-07-19": {url:"https://fb.me/e/5hwOfLzpx", name:"Lincoln Classic Motorshow", type:"external", time:"09:00-17:00", location:"Lincolnshire Showground", notes:"Celebrate the very best of classic motoring at the Lincolnshire Classic"},
+    "2026-07-26": [
+        {url:"https://fb.me/e/3V4hitoD2", name:"Northern Italian Car Show", type:"external", time:"09:00-17:00", location:"Raby Castle, Darlington", notes:"This fabulous location is a superb venue for Italian car clubs"},
+        {url:"https://fb.me/e/6DeLNjpDy", name:"Derby Motorfeast", type:"external", time:"10:00-17:00", location:"Elvaston castle country park", notes:"Derby MotorFeast is back for 2026 - bigger, better and even more exciting!"}
+    ],
+    "2026-08-01": {url:"https://fb.me/e/3bI9LbdI9", name:"Fiat & Friends @ Gaydon Museum", type:"external", time:"09:00-17:00", location:"Gaydon Motor Museum, Warwick", notes:"Fiats & Friends is open to every Italian vehicle from 1899 to the present day"},
+    "2026-08-02": {url:"https://beamish.org.uk", name:"Beamish Italian day", type:"external", time:"09:00-17:00", location:"Beamish Museum, Stanley", notes:"Family-friendly event"},
+    "2026-08-09": {url:"https://fb.me/e/3bI9LbdI9", name:"Festival Italia Brand Hatch", type:"external", time:"09:00-17:00", location:"Brands Hatch Circuit Kent", notes:"Festival Italia at Brands Hatch is one of the largest gatherings of Italian cars in the UK"},
+    "2026-08-22": {url:"https://fb.me/e/6jPgBPmIU", name:"Mathewsons Live", type:"external", time:"09:00-17:00", location:"Harrogate Showground", notes:"Meet the crew from Bangers & Cash"},
+    "2026-08-23": [
+        {url:"https://fb.me/e/9sWD8W1JL", name:"Carlton Towers Italian Event", type:"external", time:"09:00-17:00", location:"Carlton Towers Goole", notes:"This fabulous location is a superb venue for Italian car clubs"},
+        {url:"https://fb.me/e/6jPgBPmIU", name:"Mathewsons Live", type:"external", time:"09:00-17:00", location:"Harrogate Showground", notes:"Meet the crew from Bangers & Cash"}
+    ],
+    "2026-09-06": {url:"https://fb.me/e/afAKnZ8nF", name:"Bridgnorth Italian Automoto", type:"external", time:"08:00-17:00", location:"Bridgnorth High Street WV16 4DX", notes:"Bridgnorth has become one of the most popular events in the Italian Vehicle calendar"},
+    "2026-09-12": {url:"https://fb.me/e/44i1S71Xm", name:"Race The Waves 2026", type:"external", time:"08:00-17:00", location:"Bridlington", notes:"Hear the roar of the engines! Watch vintage vehicles and motorbikes race along Bridlington South Beach!"},
+    "2026-09-13": {url:"https://fb.me/e/44i1S71Xm", name:"Race The Waves 2026", type:"external", time:"08:00-17:00", location:"Bridlington", notes:"Hear the roar of the engines! Watch vintage vehicles and motorbikes race along Bridlington South Beach"},
+    "2026-09-19": {url:"https://fb.me/e/8k2Gl22XP", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"},
+    "2026-09-27": {url:"https://fb.me/e/3ZUKsANlZ", name:"Simply Italian, Beaulieu", type:"external", time:"10:00-17:00", location:"Beaulieu, SO42 7ZN Lymington, United Kingdom", notes:"All Italian car owners are invited to drive into Beaulieu and park up within the museum complex"},
+    "2026-10-11": {url:"https://l.facebook.com/l.php?u=http%3A%2F%2Fthecardingshed.com%2F", name:"The Carding Shed", type:"external", time:"09:00-16:00", location:"Holmfirth", notes:"Vintage themed social event cafe in the heart of Yorkshire"},
+    "2026-11-14": {url:"https://fb.me/e/334Kygn4s", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"},
+    "2026-12-19": {url:"https://fb.me/e/76hhpkPcF", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"}
+};
+
+function createMonth(year, month, name) {
+    let container = document.createElement('div');
+    container.className = 'month';
+    container.innerHTML = `<h2>${name}</h2>`;
+
+    let cal = document.createElement('div');
+    cal.className = 'calendar';
+
+    const headers = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    headers.forEach(h=>{
+        let d=document.createElement('div');
+        d.className='day-header';
+        d.innerText=h;
+        cal.appendChild(d);
+    });
+
+    let firstDay = new Date(year, month-1, 1).getDay();
+    let startOffset = firstDay === 0 ? 6 : firstDay - 1;
+    let daysInMonth = new Date(year, month, 0).getDate();
+
+    for(let i=0;i<startOffset;i++){
+        let empty = document.createElement('div');
+        empty.className='day';
+        cal.appendChild(empty);
+    }
+
+    for(let i=1;i<=daysInMonth;i++){
+        let date = `${year}-${String(month).padStart(2,'0')}-${String(i).padStart(2,'0')}`;
+        let d=document.createElement('div');
+        d.className='day';
+
+        let weekday = new Date(date).getDay();
+        let adjustedWeekday = weekday === 0 ? 6 : weekday - 1;
+        if(adjustedWeekday === 5) d.classList.add('saturday');
+
+        d.innerHTML = `<div><strong>${i}</strong></div>`;
+
+        if(eventsList[date]){
+            let dayEvents = Array.isArray(eventsList[date]) ? eventsList[date] : [eventsList[date]];
+            dayEvents.forEach(e => {
+                d.classList.add(e.type === 'club' ? 'club' : 'external');
+                d.innerHTML += `<a class='event-name' href='${e.url}' target='_blank' rel='noopener noreferrer' onclick='event.preventDefault();openEventLink("${'${e.url}'.replace(/"/g,'&quot;')}")'>${e.name}</a>`;
+                if(e.time) d.innerHTML += `<div class='event-time'>${e.time}</div>`;
+                if(e.location) d.innerHTML += `<div class='event-location'>${e.location}</div>`;
+                if(e.notes) d.innerHTML += `<div class='event-notes'>${e.notes}</div>`;
+            });
+        }
+
+        cal.appendChild(d);
+    }
+
+    container.appendChild(cal);
+    document.getElementById('events').appendChild(container);
+}
+
+for(let m=2;m<=12;m++){
+    let monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    createMonth(2026, m, `${monthNames[m-1]} 2026`);
+}
+</script>
+
+</body>
+</html>
