@@ -57,65 +57,62 @@ h2 {color:#ff2b2b}
 
 <script>
 const eventsList = {
-    "2026-02-21": {url:"https://fb.me/e/eh72gMTCD", name:"Italian Day @ The Motorist", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Italian cars showcase"},
-    "2026-03-14": {url:"https://themotorist.com", name:"Little Ladies 14th Birthday", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Family-friendly event"},
-    "2026-03-22": {url:"https://fb.me/e/41MsUuixh", name:"Whitby Scenic Drive Out ", type:"club", time:"09:30", location:"Yorkshire Moors", notes:"Bring your Abarth"},
-  
+   {
+  "2026-02-21": {url:"https://fb.me/e/eh72gMTCD", name:"Italian Day @ The Motorist", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Italian cars showcase"},
+  "2026-03-14": {url:"https://themotorist.com", name:"Little Ladies 14th Birthday", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Family-friendly event"},
+  "2026-03-22": {url:"https://fb.me/e/41MsUuixh", name:"Whitby Scenic Drive Out", type:"club", time:"09:30", location:"Yorkshire Moors", notes:"Bring your Abarth"},
 
-    "2026-04-05": {url:"https://fb.me/e/5ZeA8UhA5", name:"Car society Easter car show Retford", type:"external", time:"10:00-17:00", location:"Retford Park", notes:"Open to all car enthusiasts"},
-    "2026-04-18": {url:"https://fb.me/e/74AVfbikB", name:"2nd annual Northern Abarth Day", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Celebration of Abarth cars"},
-    "2026-04-19": {url:"https://fb.me/e/3O6qlyY0f", name:"Auto amor @ the Great British car journey", type:"external", time:"10:00-16:00", location:"Ambergate Belper", notes:"Great British Car Shows Presents: Italian Cars"},
+  "2026-04-05": {url:"https://fb.me/e/5ZeA8UhA5", name:"Car society Easter car show Retford", type:"external", time:"10:00-17:00", location:"Retford Park", notes:"Open to all car enthusiasts"},
+  "2026-04-18": {url:"https://fb.me/e/74AVfbikB", name:"2nd annual Northern Abarth Day", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Celebration of Abarth cars"},
+  "2026-04-19": {url:"https://fb.me/e/3O6qlyY0f", name:"Auto amor @ the Great British car journey", type:"external", time:"10:00-16:00", location:"Ambergate Belper", notes:"Great British Car Shows Presents: Italian Cars"},
 
-    "2026-05-02": {url:"https://fb.me/e/7FGVtYnKS", name:"Auto Italia Brooklands", type:"external", time:"08:00-17:00", location:"Brooklands Museum, Weybridge", notes:"Now in its 32nd year, the Auto Italia Italian Car Day at Brooklands"},
-    "2026-05-04": {url:"https://fb.me/e/9FknRlo2U", name:"Mini V Abarth @ The Motorist with Killallchrome", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Mini v Abarth with Killallchrome"},
-    "2026-05-09": {url:"https://fb.me/e/4aRy5k0XU", name:"Croft circuit classic & modern car show", type:"external", time:"10:00-16:00", location:"Croft Circuit, Darlington", notes:"Croft Circuit hosts The Classic to Modern Motor Show"},
-    "2026-05-10": {url:"https://fb.me/e/9HwnHrUKV", name:"Tractor pulling, social event", type:"external", time:"10:00-18:00", location:"Scorton Show Ground", notes:"Join us for an exciting social event of power & high-octane action"},
-    "2026-05-17": {url:"https://www.facebook.com/search/top?q=classic%20wheels%20oakham", name:"Classic Wheels, Oakham", type:"external", time:"09:00-16:00", location:"Rutland Showground", notes:"More than 1000 classic vehicles were on display in 2025 alongside Autojumble stands"},
-    "2026-05-24": {url:"https://sandringhammotoringpageant.co.uk", name:"The Sandringham Pageant Of Motoring", type:"external", time:"10:00-17:00", location:"Sandringham Parkland", notes:"Live Music & Classic Cars"},
-    "2026-05-25": {url:"https://fb.me/e/4d1BgZXuk", name:"Yorkshire Classic & Performance Motor Show", type:"external", time:"10:00-18:00", location:"Scampston Hall, Malton", notes:"Classic & Performance social event"},
-    "2026-05-31": {url:"https://fb.me/e/4b8ss4FLo", name:"JPC Smiles For Miles", type:"external", time:"09:00-17:00", location:"Hardwick Hall, Stockton", notes:"Action-packed day of inclusive automotive excitement"},
+  "2026-05-02": {url:"https://fb.me/e/7FGVtYnKS", name:"Auto Italia Brooklands", type:"external", time:"08:00-17:00", location:"Brooklands Museum, Weybridge", notes:"Now in its 32nd year, the Auto Italia Italian Car Day at Brooklands"},
+  "2026-05-04": {url:"https://fb.me/e/9FknRlo2U", name:"Mini V Abarth @ The Motorist with Killallchrome", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Mini v Abarth with Killallchrome"},
+  "2026-05-09": {url:"https://fb.me/e/4aRy5k0XU", name:"Croft circuit classic & modern car show", type:"external", time:"10:00-16:00", location:"Croft Circuit, Darlington", notes:"Croft Circuit hosts The Classic to Modern Motor Show"},
+  "2026-05-10": {url:"https://fb.me/e/9HwnHrUKV", name:"Tractor pulling, social event", type:"external", time:"10:00-18:00", location:"Scorton Show Ground", notes:"Join us for an exciting social event of power & high-octane action"},
+  "2026-05-17": {url:"https://www.facebook.com/search/top?q=classic%20wheels%20oakham", name:"Classic Wheels, Oakham", type:"external", time:"09:00-16:00", location:"Rutland Showground", notes:"More than 1000 classic vehicles were on display in 2025 alongside Autojumble stands"},
+  "2026-05-24": {url:"https://sandringhammotoringpageant.co.uk", name:"The Sandringham Pageant Of Motoring", type:"external", time:"10:00-17:00", location:"Sandringham Parkland", notes:"Live Music & Classic Cars"},
+  "2026-05-25": {url:"https://fb.me/e/4d1BgZXuk", name:"Yorkshire Classic & Performance Motor Show", type:"external", time:"10:00-18:00", location:"Scampston Hall, Malton", notes:"Classic & Performance social event"},
+  "2026-05-31": {url:"https://fb.me/e/4b8ss4FLo", name:"JPC Smiles For Miles", type:"external", time:"09:00-17:00", location:"Hardwick Hall, Stockton", notes:"Action-packed day of inclusive automotive excitement"},
 
-    "2026-06-06": {url:"https://fb.me/e/6u0tk6p7N", name:"Car Society & Retford Car Show", type:"external", time:"11:00-16:00", location:"Retford Rugby Club", notes:"A car show for all."},
-    "2026-06-07": {url:"https://fb.me/e/1Up4JhOS1E", name:"Nottingham Motor Show @ Wollaton Hall", type:"external", time:"09:00-16:00", location:"Wollaton Hall, Nottingham", notes:"The Nottingham Motor Show, set in the beautiful grounds of Wollaton Hall"},
-    "2026-06-14": {url:"https://greatbritishmotorshows.com", name:"The Lake District Classic & Performance Motor Show", type:"external", time:"09:00-16:00", location:"Hutton in the Forest, near Penrith", notes:"Classic car enthusiasts, performance cars, clubs & collectors"},
-    "2026-06-21": {url:"https://fb.me/e/6A6Weycb1", name:"Derbyshire Drive Out, Castleton & Ladybower", type:"external", time:"09:30-17:00", location:"Bamford", notes:"Abarth club Yorkshire scenic drive out round Derbyshire with stops at Castleton, Ladybower reservoir etc."},
-    "2026-06-28": {url:"https://fb.me/e/1UdqgahXu3", name:"JPC Smiles For Miles @ The Motorist", type:"external", time:"09:00-17:00", location:"The Motorist, Leeds", notes:"Featuring an impressive range of Prestige, Sports, and Supercars on display"},
+  "2026-06-06": {url:"https://fb.me/e/6u0tk6p7N", name:"Car Society & Retford Car Show", type:"external", time:"11:00-16:00", location:"Retford Rugby Club", notes:"A car show for all."},
+  "2026-06-07": {url:"https://fb.me/e/1Up4JhOS1E", name:"Nottingham Motor Show @ Wollaton Hall", type:"external", time:"09:00-16:00", location:"Wollaton Hall, Nottingham", notes:"The Nottingham Motor Show, set in the beautiful grounds of Wollaton Hall"},
+  "2026-06-14": {url:"https://greatbritishmotorshows.com", name:"The Lake District Classic & Performance Motor Show", type:"external", time:"09:00-16:00", location:"Hutton in the Forest, near Penrith", notes:"Classic car enthusiasts, performance cars, clubs & collectors"},
+  "2026-06-21": {url:"https://fb.me/e/6A6Weycb1", name:"Derbyshire Drive Out, Castleton & Ladybower", type:"external", time:"09:30-17:00", location:"Bamford", notes:"Abarth club Yorkshire scenic drive out round Derbyshire with stops at Castleton, Ladybower reservoir etc."},
+  "2026-06-28": {url:"https://fb.me/e/1UdqgahXu3", name:"JPC Smiles For Miles @ The Motorist", type:"external", time:"09:00-17:00", location:"The Motorist, Leeds", notes:"Featuring an impressive range of Prestige, Sports, and Supercars on display"},
 
-    "2026-07-19": {url:"https://fb.me/e/5hwOfLzpx", name:"Lincoln Classic Motorshow", type:"external", time:"09:00-17:00", location:"Lincolnshire Showground", notes:"Celebrate the very best of classic motoring at the Lincolnshire Classic"},
-    "2026-07-26": [
-        {url:"https://fb.me/e/3V4hitoD2", name:"Northern Italian Car Show", type:"external", time:"09:00-17:00", location:"Raby Castle, Darlington", notes:"This fabulous location is a superb venue for Italian car clubs"},
-        {url:"https://fb.me/e/6DeLNjpDy", name:"Derby Motorfeast", type:"external", time:"10:00-17:00", location:"Elvaston castle country park", notes:"Derby MotorFeast is back for 2026 - bigger, better and even more exciting!"}
-    ],
+  "2026-07-19": {url:"https://fb.me/e/5hwOfLzpx", name:"Lincoln Classic Motorshow", type:"external", time:"09:00-17:00", location:"Lincolnshire Showground", notes:"Celebrate the very best of classic motoring at the Lincolnshire Classic"},
+  "2026-07-26": [
+    {url:"https://fb.me/e/3V4hitoD2", name:"Northern Italian Car Show", type:"external", time:"09:00-17:00", location:"Raby Castle, Darlington", notes:"This fabulous location is a superb venue for Italian car clubs"},
+    {url:"https://fb.me/e/6DeLNjpDy", name:"Derby Motorfeast", type:"external", time:"10:00-17:00", location:"Elvaston castle country park", notes:"Derby MotorFeast is back for 2026 - bigger, better and even more exciting!"}
+  ],
 
-    "2026-08-01": {url:"https://fb.me/e/3bI9LbdI9", name:"Fiat & Friends @ Gaydon Museum", type:"external", time:"09:00-17:00", location:"Gaydon Motor Museum, Warwick", notes:"Fiats & Friends is open to every Italian vehicle from 1899 to the present day"},
-    "2026-08-02": {url:"https://beamish.org.uk", name:"Beamish Italian day", type:"external", time:"09:00-17:00", location:"Beamish Museum, Stanley", notes:"Family-friendly event"},
-    "2026-08-08": {url:"https://fb.me/e/78kHs2ksi", name:"Scarborough & Olivers Mount Scenic Drive Out", type:"external", time:"09:30-17:00", location:"Scarborough", notes:"Abarth club Yorkshire’s leisurely drive round some stunning North Yorkshire scenery"},
-    "2026-08-09": {url:"https://fb.me/e/3bI9LbdI9", name:"Festival Italia Brand Hatch", type:"external", time:"09:00-17:00", location:"Brands Hatch Circuit Kent", notes:"Festival Italia at Brands Hatch is one of the largest gatherings of Italian cars in the UK"},
-    "2026-08-22": {url:"https://fb.me/e/6jPgBPmIU", name:"Mathewsons Live", type:"external", time:"09:00-17:00", location:"Harrogate Showground", notes:"Meet the crew from Bangers & Cash"},
-    "2026-08-23": [
-        {url:"https://fb.me/e/9sWD8W1JL", name:"Carlton Towers Italian Event", type:"external", time:"09:00-17:00", location:"Carlton Towers Goole", notes:"This fabulous location is a superb venue for Italian car clubs"},
-        {url:"https://fb.me/e/6jPgBPmIU", name:"Mathewsons Live", type:"external", time:"09:00-17:00", location:"Harrogate Showground", notes:"Meet the crew from Bangers & Cash"}
-    ],
+  "2026-08-01": {url:"https://fb.me/e/3bI9LbdI9", name:"Fiat & Friends @ Gaydon Museum", type:"external", time:"09:00-17:00", location:"Gaydon Motor Museum, Warwick", notes:"Fiats & Friends is open to every Italian vehicle from 1899 to the present day"},
+  "2026-08-02": {url:"https://beamish.org.uk", name:"Beamish Italian day", type:"external", time:"09:00-17:00", location:"Beamish Museum, Stanley", notes:"Family-friendly event"},
+  "2026-08-08": {url:"https://fb.me/e/78kHs2ksi", name:"Scarborough & Olivers Mount Scenic Drive Out", type:"external", time:"09:30-17:00", location:"Scarborough", notes:"Abarth club Yorkshire’s leisurely drive round some stunning North Yorkshire scenery"},
+  "2026-08-09": {url:"https://fb.me/e/3bI9LbdI9", name:"Festival Italia Brand Hatch", type:"external", time:"09:00-17:00", location:"Brands Hatch Circuit Kent", notes:"Festival Italia at Brands Hatch is one of the largest gatherings of Italian cars in the UK"},
+  "2026-08-22": {url:"https://fb.me/e/6jPgBPmIU", name:"Mathewsons Live", type:"external", time:"09:00-17:00", location:"Harrogate Showground", notes:"Meet the crew from Bangers & Cash"},
+  "2026-08-23": [
+    {url:"https://fb.me/e/9sWD8W1JL", name:"Carlton Towers Italian Event", type:"external", time:"09:00-17:00", location:"Carlton Towers Goole", notes:"This fabulous location is a superb venue for Italian car clubs"},
+    {url:"https://fb.me/e/6jPgBPmIU", name:"Mathewsons Live", type:"external", time:"09:00-17:00", location:"Harrogate Showground", notes:"Meet the crew from Bangers & Cash"}
+  ],
 
-    "2026-09-06": {url:"https://fb.me/e/afAKnZ8nF", name:"Bridgnorth Italian Automoto", type:"external", time:"08:00-17:00", location:"Bridgnorth High Street WV16 4DX", notes:"Bridgnorth has become one of the most popular events in the Italian Vehicle calendar"},
-    "2026-09-12": {url:"https://fb.me/e/44i1S71Xm", name:"Race The Waves 2026", type:"external", time:"08:00-17:00", location:"Bridlington", notes:"Hear the roar of the engines! Watch vintage vehicles and motorbikes race along Bridlington South Beach!"},
-    "2026-09-13": {url:"https://fb.me/e/44i1S71Xm", name:"Race The Waves 2026", type:"external", time:"08:00-17:00", location:"Bridlington", notes:"Hear the roar of the engines! Watch vintage vehicles and motorbikes race along Bridlington South Beach"},
-    "2026-09-19": {url:"https://fb.me/e/8k2Gl22XP", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"},
-    "2026-09-27": {url:"https://fb.me/e/3ZUKsANlZ", name:"Simply Italian, Beaulieu", type:"external", time:"10:00-17:00", location:"Beaulieu, SO42 7ZN Lymington, United Kingdom", notes:"All Italian car owners are invited to drive into Beaulieu and park up within the museum complex"},
+  "2026-09-06": {url:"https://fb.me/e/afAKnZ8nF", name:"Bridgnorth Italian Automoto", type:"external", time:"08:00-17:00", location:"Bridgnorth High Street WV16 4DX", notes:"Bridgnorth has become one of the most popular events in the Italian Vehicle calendar"},
+  "2026-09-12": {url:"https://fb.me/e/44i1S71Xm", name:"Race The Waves 2026", type:"external", time:"08:00-17:00", location:"Bridlington", notes:"Hear the roar of the engines! Watch vintage vehicles and motorbikes race along Bridlington South Beach!"},
+  "2026-09-13": {url:"https://fb.me/e/44i1S71Xm", name:"Race The Waves 2026", type:"external", time:"08:00-17:00", location:"Bridlington", notes:"Hear the roar of the engines! Watch vintage vehicles and motorbikes race along Bridlington South Beach"},
+  "2026-09-19": {url:"https://fb.me/e/8k2Gl22XP", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"},
+  "2026-09-27": {url:"https://fb.me/e/3ZUKsANlZ", name:"Simply Italian, Beaulieu", type:"external", time:"10:00-17:00", location:"Beaulieu, SO42 7ZN Lymington, United Kingdom", notes:"All Italian car owners are invited to drive into Beaulieu and park up within the museum complex"},
 
-   "2026-10-11": [
-    {url:"https://l.facebook.com/l.php?u=http%3A%2F%2Fthecardingshed.com%2F", name:"The Carding Shed", type:"external", time:"09:00-16:00", location:"Holmfirth", notes:"Vintage themed social event cafe in the heart of Yorkshire"},
+  "2026-10-11": [
     {url:"https://fb.me/e/922rlXOB2", name:"Scenic Drive To The Carding Shed & Emily Moor Transmitter", type:"external", time:"09:30-17:00", location:"The Carding Shed", notes:"Abarth club Yorkshire visits The Carding Shed and Emley Moor transmitter with a scenic drive."}
-],
-"2026-10-25": {url:"https://fb.me/e/3MrSsINgg", name:"Scenic Drive Around The Yorkshire Dales", type:"external", time:"09:30-17:00", location:"Buttertubs Pass", notes:"Abarth club Yorkshire visits the beautiful Yorkshire Dales including Buttertubs Pass and Hawes."},
-        
-    "2026-10-25": {url:"https://fb.me/e/3MrSsINgg", name:"Scenic Drive Around The Yorkshire Dales", type:"external", time:"09:30-17:00", location:"Buttertubs Pass", notes:"Abarth club Yorkshire visits the beautiful Yorkshire Dales including Buttertubs Pass and Hawes."},
+  ],
+  "2026-10-25": {url:"https://fb.me/e/3MrSsINgg", name:"Scenic Drive Around The Yorkshire Dales", type:"external", time:"09:30-17:00", location:"Buttertubs Pass", notes:"Abarth club Yorkshire visits the beautiful Yorkshire Dales including Buttertubs Pass and Hawes."},
 
-    "2026-11-01": {url:"https://fb.me/e/h9NkiPx8S", name:"The Deep Hull, Including Humber Bridge Drive Out", type:"external", time:"09:30-17:00", location:"Kingston Upon Hull", notes:"Abarth club Yorkshire visits The Deep, Humber Bridge and Guy Martin's pub."},
-    "2026-11-14": {url:"https://fb.me/e/334Kygn4s", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"},
+  "2026-11-01": {url:"https://fb.me/e/h9NkiPx8S", name:"The Deep Hull, Including Humber Bridge Drive Out", type:"external", time:"09:30-17:00", location:"Kingston Upon Hull", notes:"Abarth club Yorkshire visits The Deep, Humber Bridge and Guy Martin's pub."},
+  "2026-11-14": {url:"https://fb.me/e/334Kygn4s", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"},
 
-    "2026-12-19": {url:"https://fb.me/e/76hhpkPcF", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"}
-};
+  "2026-12-19": {url:"https://fb.me/e/76hhpkPcF", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"}
+}
 function createMonth(year, month, name) {
     let container = document.createElement('div');
     container.className = 'month';
