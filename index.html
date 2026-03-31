@@ -57,11 +57,13 @@ h2 {color:#ff2b2b}
 
 <script>
 const eventsList = {
+
   "2026-02-21": {url:"https://fb.me/e/eh72gMTCD", name:"Italian Day @ The Motorist", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Italian cars showcase"},
   "2026-03-14": {url:"https://themotorist.com", name:"Little Ladies 14th Birthday", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Family-friendly event"},
   "2026-03-22": {url:"https://fb.me/e/41MsUuixh", name:"Whitby Scenic Drive Out", type:"club", time:"09:30", location:"Yorkshire Moors", notes:"Bring your Abarth"},
 
   "2026-04-05": {url:"https://fb.me/e/5ZeA8UhA5", name:"Car society Easter car show Retford", type:"external", time:"10:00-17:00", location:"Retford Park", notes:"Open to all car enthusiasts"},
+  "2026-04-12": {url:"https://fb.me/e/7LWjQgEtQ", name:"Straightliners Time Travelers Event", type:"external", time:"09:00-16:00", location:"Melbourne Raceway York", notes:"Excellent day out to be had"},
   "2026-04-18": {url:"https://fb.me/e/74AVfbikB", name:"2nd annual Northern Abarth Day", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Celebration of Abarth cars"},
   "2026-04-19": {url:"https://fb.me/e/3O6qlyY0f", name:"Auto amor @ the Great British car journey", type:"external", time:"10:00-16:00", location:"Ambergate Belper", notes:"Great British Car Shows Presents: Italian Cars"},
 
@@ -69,7 +71,10 @@ const eventsList = {
   "2026-05-04": {url:"https://fb.me/e/9FknRlo2U", name:"Mini V Abarth @ The Motorist with Killallchrome", type:"external", time:"10:00-16:00", location:"The Motorist, Leeds", notes:"Mini v Abarth with Killallchrome"},
   "2026-05-09": {url:"https://fb.me/e/4aRy5k0XU", name:"Croft circuit classic & modern car show", type:"external", time:"10:00-16:00", location:"Croft Circuit, Darlington", notes:"Croft Circuit hosts The Classic to Modern Motor Show"},
   "2026-05-10": {url:"https://fb.me/e/9HwnHrUKV", name:"Tractor pulling, social event", type:"external", time:"10:00-18:00", location:"Scorton Show Ground", notes:"Join us for an exciting social event of power & high-octane action"},
-  "2026-05-17": {url:"https://www.facebook.com/search/top?q=classic%20wheels%20oakham", name:"Classic Wheels, Oakham", type:"external", time:"09:00-16:00", location:"Rutland Showground", notes:"More than 1000 classic vehicles were on display in 2025 alongside Autojumble stands"},
+  "2026-05-17": [
+    {url:"https://www.facebook.com/search/top?q=classic%20wheels%20oakham", name:"Classic Wheels, Oakham", type:"external", time:"09:00-16:00", location:"Rutland Showground", notes:"More than 1000 classic vehicles were on display in 2025 alongside Autojumble stands"},
+    {url:"https://fb.me/e/6ClBazhKp", name:"Auto Finesse Open Day", type:"external", time:"10:00-16:00", location:"Hexthorpe Doncaster", notes:"Stunning display of show cars our 2nd invite."}
+  ],
   "2026-05-24": {url:"https://sandringhammotoringpageant.co.uk", name:"The Sandringham Pageant Of Motoring", type:"external", time:"10:00-17:00", location:"Sandringham Parkland", notes:"Live Music & Classic Cars"},
   "2026-05-25": {url:"https://fb.me/e/4d1BgZXuk", name:"Yorkshire Classic & Performance Motor Show", type:"external", time:"10:00-18:00", location:"Scampston Hall, Malton", notes:"Classic & Performance social event"},
   "2026-05-31": {url:"https://fb.me/e/4b8ss4FLo", name:"JPC Smiles For Miles", type:"external", time:"09:00-17:00", location:"Hardwick Hall, Stockton", notes:"Action-packed day of inclusive automotive excitement"},
@@ -80,6 +85,8 @@ const eventsList = {
   "2026-06-21": {url:"https://fb.me/e/6A6Weycb1", name:"Derbyshire Drive Out, Castleton & Ladybower", type:"external", time:"09:30-17:00", location:"Bamford", notes:"Abarth club Yorkshire scenic drive out round Derbyshire with stops at Castleton, Ladybower reservoir etc."},
   "2026-06-28": {url:"https://fb.me/e/1UdqgahXu3", name:"JPC Smiles For Miles @ The Motorist", type:"external", time:"09:00-17:00", location:"The Motorist, Leeds", notes:"Featuring an impressive range of Prestige, Sports, and Supercars on display"},
 
+  "2026-07-11": {url:"https://fb.me/e/5bzggZ3l8", name:"Abarth Fest @ Prescott Hill Climb", type:"external", time:"10:00-16:00", location:"Prescott Hill Climb, Cheltenham", notes:"The big one of the year all Abarths"},
+  "2026-07-12": {url:"https://fb.me/e/8q59DSS7L", name:"Straightliners Jet Fest Event", type:"external", time:"09:00-17:00", location:"Melbourne Raceway York", notes:"Excellent day out to be had"},
   "2026-07-19": {url:"https://fb.me/e/5hwOfLzpx", name:"Lincoln Classic Motorshow", type:"external", time:"09:00-17:00", location:"Lincolnshire Showground", notes:"Celebrate the very best of classic motoring at the Lincolnshire Classic"},
   "2026-07-26": [
     {url:"https://fb.me/e/3V4hitoD2", name:"Northern Italian Car Show", type:"external", time:"09:00-17:00", location:"Raby Castle, Darlington", notes:"This fabulous location is a superb venue for Italian car clubs"},
@@ -110,8 +117,11 @@ const eventsList = {
   "2026-11-01": {url:"https://fb.me/e/h9NkiPx8S", name:"The Deep Hull, Including Humber Bridge Drive Out", type:"external", time:"09:30-17:00", location:"Kingston Upon Hull", notes:"Abarth club Yorkshire visits The Deep, Humber Bridge and Guy Martin's pub."},
   "2026-11-14": {url:"https://fb.me/e/334Kygn4s", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"},
 
-  "2026-12-19": {url:"https://fb.me/e/76hhpkPcF", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"}
-}
+  "2026-12-19": [
+    
+    {url:"https://fb.me/e/76hhpkPcF", name:"Shadow Sports Track, Cars & Coffee", type:"external", time:"08:00-17:00", location:"Curborough Sprint Course", notes:"Take your car on the track or just watch the action"}
+  ]
+};
 function createMonth(year, month, name) {
     let container = document.createElement('div');
     container.className = 'month';
